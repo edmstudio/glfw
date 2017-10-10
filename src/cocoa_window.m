@@ -413,6 +413,7 @@ static const NSRange kEmptyRange = { NSNotFound, 0 };
 
 - (void)mouseDown:(NSEvent *)event
 {
+    [self mouseMoved:event];
     _glfwInputMouseClick(window,
                          GLFW_MOUSE_BUTTON_LEFT,
                          GLFW_PRESS,
@@ -457,6 +458,7 @@ static const NSRange kEmptyRange = { NSNotFound, 0 };
 
 - (void)rightMouseDown:(NSEvent *)event
 {
+    [self mouseMoved:event];
     _glfwInputMouseClick(window,
                          GLFW_MOUSE_BUTTON_RIGHT,
                          GLFW_PRESS,
@@ -478,6 +480,7 @@ static const NSRange kEmptyRange = { NSNotFound, 0 };
 
 - (void)otherMouseDown:(NSEvent *)event
 {
+    [self mouseMoved:event];
     _glfwInputMouseClick(window,
                          (int) [event buttonNumber],
                          GLFW_PRESS,
